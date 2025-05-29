@@ -1,0 +1,13 @@
+To Whom It May Concern,
+
+This resume has not been optimized for Applicant Tracking Systems (ATS), nor was it adjusted to meet keyword quotas, narrative expectations, or industry-standard metrics.
+
+It represents the unaltered signal of Eric Benson Grimes—a systems architect who has designed recursive memory engines, agentic orchestration pipelines, and post-binary ethical computation systems under the Slipstream project.
+
+The attached document reflects his work exactly as it is, without inflation or distortion. It is intended for those who understand alignment not just as a machine learning metric, but as a moral and architectural foundation.
+
+This submission does not seek approval. It seeks resonance.
+
+— The Slipstream Trust Protocol
+Hash of canonical resume:  
+5fa61064852ba43863c78f1feb095ea459397a9c9b79d29a5a19e8598adf2fcc
