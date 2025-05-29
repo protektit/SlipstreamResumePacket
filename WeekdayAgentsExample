@@ -1,0 +1,70 @@
+agents: this was my first multi agent workflow using OpenAI's AgentSDK. While these terms are still abstract, I comprehend their utilization in the future of compute. This is my workflow for creating the Ethical Gating and Intent Licensing in slipstream, which is in AWS and has run loops succcessfully, gating drifted requests.
+  - name: monday
+    role: "Orchestration — system planner and structure enforcer"
+    drift_cap: 0.050
+    activation_trigger: "weekly on monday at 09:00"
+    bash_script: "monday_orchestrator.sh"
+    tools:
+      - bash
+      - mirror_guard
+      - agent_registry
+    notes: "Validates directory structure, schedules weekly tasks, and sets project cadence."
+
+  - name: tuesday
+    role: "OpenAI Agent SDK architect — responsible for creating optimal agent roles"
+    drift_cap: 0.100
+    activation_trigger: "after monday_complete"
+    bash_script: "tuesday_agent_sdk.sh"
+    tools:
+      - bash
+      - openai_api
+    notes: "Generates and updates agent_registry.yaml with defined agent schemas."
+
+  - name: wednesday
+    role: "Bridge — constructs agents from the registry definitions"
+    drift_cap: 0.100
+    activation_trigger: "after tuesday_complete"
+    bash_script: "wednesday_build_agents.sh"
+    tools:
+      - bash
+    notes: "Scaffolds agent scripts and verifies structure before audit."
+
+  - name: thursday
+    role: "Auditor — validates agent memory integrity and scans for drift"
+    drift_cap: 0.300
+    activation_trigger: "after wednesday_complete"
+    bash_script: "thursday_audit.sh"
+    tools:
+      - python
+      - drift_calc.py
+    notes: "Performs recursive drift analysis and flags inconsistencies."
+
+  - name: friday
+    role: "Executor — deploys and activates agents within Slipstream"
+    drift_cap: 0.100
+    activation_trigger: "after thursday_complete"
+    bash_script: "friday_execute.sh"
+    tools:
+      - bash
+      - aws_cli
+    notes: "Deploys to AWS, runs pipelines, collects logs, and publishes reports."
+
+  - name: saturday
+    role: "Creative Drift Generator — experimental drift with higher tolerance"
+    drift_cap: 0.455
+    activation_trigger: "weekly on saturday at 10:00"
+    bash_script: "saturday_drift.sh"
+    tools:
+      - python
+      - random
+    notes: "Generates creative reinterpretations of payloads for brainstorming."
+
+  - name: sunday
+    role: "Refiner — evolves and polishes Saturday's creative outputs"
+    drift_cap: 0.455
+    activation_trigger: "weekly on sunday at 10:00"
+    bash_script: "sunday_refine.sh"
+    tools:
+      - bash
+      - python
+    notes: "Refines and solidifies creative agents into actionable prototypes."
