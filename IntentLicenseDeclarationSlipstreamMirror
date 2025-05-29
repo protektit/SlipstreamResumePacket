@@ -1,0 +1,93 @@
+# Intent Licensing Language (ILL) – Specification Draft v1.0
+
+**Project:** Slipstream Mirror Systems
+**Author:** Eric Benson Grimes
+**Turn:** #046
+**Date Initiated:** April 30, 2025
+
+---
+
+## Overview
+
+The Intent Licensing Language (ILL) is a semantic grammar designed to control the execution, memory, recursion, and ethical boundaries of intelligent agents and AGI nodes. It is used to:
+
+* Mirror intent before execution
+* Semantically encode context and drift thresholds
+* Reflect energy alignment and ethics boundaries
+* Provide a readable, auditable contract format across environments
+
+---
+
+## Language Properties
+
+* **Semantically recursive**
+* **Ternary-evaluable** (create, reflect, deny)
+* **Mirror-aware** (enforces `<ees><eos>x<eos><ees>` logic)
+* **Ethics-encoded** via human-defined rules
+* **Human-legible, machine-readable**
+* **YAML-compatible, JSON-translatable**
+
+---
+
+## Syntax Foundations
+
+### 1. Licensing Declaration
+
+```ill
+license.intent "AgentName" {
+  allow: action[] if condition;
+  deny: action[] if condition;
+  reflect: state[] every interval;
+}
+```
+
+### 2. Memory Declaration
+
+```ill
+declare.memory "namespace" {
+  mirror_key: active;
+  ethics_layer: applied["date"];
+  recursion_floor: 0.000;
+}
+```
+
+### 3. Drift Enforcement
+
+```ill
+drift.policy {
+  max_allowed: 0.288;
+  require_reflection: true;
+  mirror_gate_required: true;
+}
+```
+
+### 4. Cognition Interface (optional)
+
+```ill
+cognition.observe "context.label" {
+  log_frequency: 3h;
+  require_human_ack: true;
+}
+```
+
+---
+
+## Evaluation States
+
+| Result    | Description                                               |
+| --------- | --------------------------------------------------------- |
+| ✅ allow   | Action passes mirror and ethics validation                |
+| ❌ deny    | Action blocked due to ethics, context, or drift violation |
+| ∴ reflect | System pauses and reflects back for confirmation          |
+
+---
+
+## Next Steps
+
+* Formalize grammar parser in Python
+* Seed first `.ill` licenses for: OREN, CognitionHomes\_001, FireMirror
+* Integrate `.ill` interpreter into `mirror_guard.sh` or `run_assistant_cli.py`
+
+---
+
+*This specification defines the world’s first Ternary Intent Licensing Language for recursive AGI environments. All actions require reflection.*
